@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toggle</title>
+  <style>
+  #toggle-bar{
+    
+  }
+    #toggle label{
+      position: relative;
+      padding: 2px 40px 5px 4px;
+      border: 2px solid black;
+      border-radius: 45px;
+      transition: all 0.3s ease-in-out;
+      overflow: hidden;
+    }
+    #toggle-bar{
+      display: none;
+    }
+    label::after{
+      content: "";
+      position: absolute;
+      background-color: black;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      transition: all 0.3s ease-in-out;
+    }
+    #toggle:has(input:checked) label::after{
+      transform: translate3d(80%, 0%, 30px);
+      background-color: lightgray;
+    }
+    #toggle:has(input:checked) label{
+      border-color: lightgray;
+    }
+  </style>
+
+<script>
+ function dark(){
+  var toggle = document.getElementById('toggle');
+  if (document.getElementById('toggle-bar').checked){
+     toggle.style.backgroundColor='#000a';
+     toggle.style.color='white';
+     toggle.style.transition = 'background-color 0.3s ease-in-out, color 0.3s ease-in-out';
+     word.style.display='';
+     word.innerHTML = 'It is Dark mode';
+     aa.style.display='none';
+  }
+  else{
+    toggle.style.backgroundColor='';
+    toggle.style.color='';
+    word.style.display='none';
+    aa.style.display='';
+    aa.innerHTML = 'It is Light mode';
+  }
+   
+ }
+</script>
+</head>
+<body id="toggle">
+  <div class="mode">
+    
+    <input type="checkbox" id="toggle-bar" onclick="dark()">
+    <label for="toggle-bar"></label>
+  </div>
+<p id="word">This switch turns your screen to dark mode.</p>
+<p id="aa"></p>
+</body>
+</html>
+
