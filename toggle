@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Toggle</title>
   <style>
-  #toggle-bar{
-    
-  }
     #toggle label{
       position: relative;
       padding: 2px 40px 5px 4px;
