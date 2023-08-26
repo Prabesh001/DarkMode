@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkbox</title>
+  <style>
+    .a label{
+      border: 3px solid red;
+      padding: 40px 40px;
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      transition: all 1s ease-in-out;
+      border-radius: 5px;
+      box-shadow:-3px -3px 10px red;
+    }
+    #check {
+      display:none;
+    }
+    
+    .a label::after{
+      content: "";
+      border-radius: 5px;
+      position: absolute;
+      background-color: red;
+      height: 38px;
+      width: 38px;
+      transition: all 1s ease-in-out;
+    }
+    .a:has(input:checked) label::after{
+      content: "";
+      background-color:green;
+      transform:translate3D(-38px,-38px, 50px)rotate(90deg);
+    }
+    .a:has(input:checked) label{
+    border-color: green;
+    box-shadow:4px 4px 10px green;
+    
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="a">
+    <input type="checkbox" id="check" >
+    <label for="check"></label>
+  </div>
+
+
+</body>
+
+</html>
